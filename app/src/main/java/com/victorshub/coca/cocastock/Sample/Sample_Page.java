@@ -66,8 +66,7 @@ public class Sample_Page extends Fragment {
         a.setShop_name("Shemsu Product");
         a.setExpiration_date("3/3/2016");
         a.setSample_taken_date("2/2/2016");
-        a.setPicture();
-        
+        a.setPicture(R.drawable.coaca_shop+"");
         bb.add(a);
 
         mAdapter = new Samples_Adapter(getActivity(),bb);

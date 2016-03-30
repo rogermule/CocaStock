@@ -28,7 +28,7 @@ public class Samples_Adapter extends RecyclerView.Adapter<Samples_Adapter.DataOb
     public static class DataObjectHolder extends RecyclerView.ViewHolder implements View.OnClickListener,View.OnLongClickListener {
         TextView Title,Content, shop,production_date, expiration_date,sampled_on,remaining_day;
         TextView dateTime;
-        ImageView Image;
+        ImageView product_pic;
 
         public DataObjectHolder(View itemView) {
             super(itemView);
@@ -38,6 +38,7 @@ public class Samples_Adapter extends RecyclerView.Adapter<Samples_Adapter.DataOb
             expiration_date = (TextView) itemView.findViewById(R.id.report_expirtaion_date);
             sampled_on = (TextView) itemView.findViewById(R.id.report_sampled_on);
             remaining_day = (TextView) itemView.findViewById(R.id.report_remaining_day1);
+            product_pic = (ImageView) itemView.findViewById(R.id.report_product_picture);
 
             Log.i(LOG_TAG, "Adding Listener");
             itemView.setOnClickListener(this);
@@ -80,13 +81,14 @@ public class Samples_Adapter extends RecyclerView.Adapter<Samples_Adapter.DataOb
         String shop_name = report.get(position).getShop_name();
         String remaining_day = report.get(position).getRemaining_day();
         String sampled_on = report.get(position).getSample_taken_date();
+        int pic_id = Integer.parseInt(report.get(position).getPicture());
 
         holder.expiration_date.setText(expiration_date);
         holder.production_date.setText(production_date);
         holder.shop.setText(shop_name);
         holder.remaining_day.setText(remaining_day);
         holder.sampled_on.setText(sampled_on);
-
+        holder.product_pic.setImageResource(pic_id);
 
     }
     public void addItem(Report news){
