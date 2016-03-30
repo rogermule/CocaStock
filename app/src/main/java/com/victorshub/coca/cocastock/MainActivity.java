@@ -1,5 +1,6 @@
 package com.victorshub.coca.cocastock;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.NavigationView;
@@ -17,6 +18,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.victorshub.coca.cocastock.Sample.Sample_Page;
+import com.victorshub.coca.cocastock.Shop.Shops_Page;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,15 +56,12 @@ public class MainActivity extends AppCompatActivity
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
-        collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
-        collapsingToolbarLayout.setTitle("Coca Stock");
-        collapsingToolbarLayout.setExpandedTitleColor(getResources().getColor(android.R.color.transparent));
     }
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new Frag_Report(), "REPORTS");
-        adapter.addFragment(new Frag_Shop(), "SHOPS");
+        adapter.addFragment(new Sample_Page(), "Sample Entries");
+        adapter.addFragment(new Shops_Page(), "Registered SHOPS");
 
         viewPager.setAdapter(adapter);
     }
@@ -117,6 +118,8 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_logout) {
             Toast.makeText(this,"Logout touched",Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this,SignIn_Page.class);
+            startActivity(intent);
 
         }
 

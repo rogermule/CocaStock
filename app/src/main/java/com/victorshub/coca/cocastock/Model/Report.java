@@ -1,20 +1,45 @@
 package com.victorshub.coca.cocastock.Model;
 
 public class Report {
-	private String id,date,product_name, remaining_day,user_name, shop_name,shop_id;
+	private String id,date,product_name, remaining_day,user_name, shop_name,shop_id,sample_taken_date, expiration_date, picture;
+
+	public String getPicture() {
+		return picture;
+	}
+
+	public void setPicture(String picture) {
+		this.picture = picture;
+	}
 
 	public Report(String id, String date,String product_name, String remaining_day, String user_name, String shop_name,String shop_id) {
 		this.id = id;
         this.date = date;
 		this.product_name = product_name;
 		this.remaining_day = remaining_day;
+
 		this.user_name = user_name;
 		this.shop_name = shop_name;
 		this.shop_id = shop_id;
 
 	}
 
-    public String getDate() {
+	public String getSample_taken_date() {
+		return sample_taken_date;
+	}
+
+	public void setSample_taken_date(String sample_taken_date) {
+		this.sample_taken_date = sample_taken_date;
+	}
+
+	public String getExpiration_date() {
+		return expiration_date;
+	}
+
+	public void setExpiration_date(String expiration_date) {
+		this.expiration_date = expiration_date;
+	}
+
+	public String getDate() {
         return date;
     }
 

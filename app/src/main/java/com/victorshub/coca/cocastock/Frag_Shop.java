@@ -135,7 +135,7 @@ public class Frag_Shop extends Fragment {
                 @Override
                 public void onClick(View v) {
                     //Toast.makeText(getActivity(),"Shop Number "+currentNum+" Touched",Toast.LENGTH_SHORT).show();
-                    Snackbar.make(v, "Shop Number "+ currentNum + " has been touched", Snackbar.LENGTH_SHORT)
+                    Snackbar.make(v, "Shop Number " + currentNum + " has been touched", Snackbar.LENGTH_SHORT)
                             .setAction("Action", null).show();
                 }
             });

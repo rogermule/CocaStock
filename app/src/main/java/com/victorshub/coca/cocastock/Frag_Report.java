@@ -1,6 +1,7 @@
 package com.victorshub.coca.cocastock;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -134,8 +135,24 @@ public class Frag_Report extends Fragment {
                 @Override
                 public void onClick(View v) {
                     //Toast.makeText(getActivity(),"Report Number "+currentNum+" Touched",Toast.LENGTH_SHORT).show();
-                    Snackbar.make(v, "Report Number "+ currentNum + " has been touched", Snackbar.LENGTH_SHORT)
-                            .setAction("Action", null).show();
+                    /*Snackbar.make(v, "Report Number "+ currentNum + " has been touched", Snackbar.LENGTH_SHORT)
+                            .setAction("Action", null).show();*/
+                    Snackbar snackbar = Snackbar
+                            .make(v, "No internet connection!", Snackbar.LENGTH_LONG)
+                            .setAction("RETRY", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                }
+                            });
+
+// Changing message text color
+                    snackbar.setActionTextColor(Color.RED);
+
+// Changing action button text color
+                    View sbView = snackbar.getView();
+                    TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+                    textView.setTextColor(Color.YELLOW);
+                    snackbar.show();
                 }
             });
 
