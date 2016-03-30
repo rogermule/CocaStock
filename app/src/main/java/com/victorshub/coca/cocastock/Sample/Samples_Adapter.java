@@ -76,6 +76,7 @@ public class Samples_Adapter extends RecyclerView.Adapter<Samples_Adapter.DataOb
     }
     @Override
     public void onBindViewHolder(DataObjectHolder holder, int position) {
+        String title = report.get(position).getProduct_name().toString();
         String expiration_date = report.get(position).getExpiration_date().toString();
         String production_date = report.get(position).getDate();
         String shop_name = report.get(position).getShop_name();
@@ -83,6 +84,7 @@ public class Samples_Adapter extends RecyclerView.Adapter<Samples_Adapter.DataOb
         String sampled_on = report.get(position).getSample_taken_date();
         int pic_id = Integer.parseInt(report.get(position).getPicture());
 
+        holder.Title.setText(title);
         holder.expiration_date.setText(expiration_date);
         holder.production_date.setText(production_date);
         holder.shop.setText(shop_name);

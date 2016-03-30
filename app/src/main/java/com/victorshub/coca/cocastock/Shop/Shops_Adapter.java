@@ -19,31 +19,32 @@ import java.util.ArrayList;
  */
 public class Shops_Adapter extends RecyclerView.Adapter<Shops_Adapter.DataObjectHolder> {
     private static String LOG_TAG = "MyRecyclerViewAdapter";
-    private ArrayList<Shop> NewsFeeds;
+    private ArrayList<Shop> shop;
     private static MyClickListener myClickListener;
     private static Context myContext;
 
     public static class DataObjectHolder extends RecyclerView.ViewHolder {
-        TextView Title,Content;
+        TextView tv_name, tv_owner, tv_location, tv_last_sampled;
         TextView dateTime;
         ImageView Image;
 
         public DataObjectHolder(View itemView) {
             super(itemView);
-            Title = (TextView) itemView.findViewById(R.id.txt_news_title);
-            Content = (TextView) itemView.findViewById(R.id.txt_news_title);
-            dateTime = (TextView) itemView.findViewById(R.id.txt_news_title);
+            tv_name = (TextView) itemView.findViewById(R.id.shop_name);
+            tv_owner = (TextView) itemView.findViewById(R.id.shop_owner);
+            tv_location = (TextView) itemView.findViewById(R.id.shop_location);
+            tv_last_sampled = (TextView) itemView.findViewById(R.id.shop_last_sampled_on);
 
             Log.i(LOG_TAG, "Adding Listener");
         }
     }
-    public Shops_Adapter(Context context, ArrayList<Shop> newsFeeds){
-        this.NewsFeeds = newsFeeds;
+    public Shops_Adapter(Context context, ArrayList<Shop> shops){
+        this.shop = shops;
         this.myContext = context;
     }
     @Override
     public int getItemCount() {
-        return NewsFeeds.size();
+        return shop.size();
     }
     @Override
     public DataObjectHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -53,13 +54,19 @@ public class Shops_Adapter extends RecyclerView.Adapter<Shops_Adapter.DataObject
     }
     @Override
     public void onBindViewHolder(DataObjectHolder holder, int position) {
-      //  holder.Title.setText(NewsFeeds.get(position).getName());
-      //  holder.Content.setText(NewsFeeds.get(position).getName());
-      //  holder.dateTime.setText(NewsFeeds.get(position).getName());
+        String name = shop.get(position).getName().toString();
+        String owner = shop.get(position).getOwner().toString();
+        String location = shop.get(position).getLocation();
+        String last_sample = shop.get(position).getLast_sampled_on();
+
+        holder.tv_name.setText(name);
+        holder.tv_owner.setText(owner);
+        holder.tv_location.setText(location);
+        holder.tv_last_sampled.setText(last_sample);
 
     }
     public void addItem(Shop news){
-        NewsFeeds.add(news);
+        shop.add(news);
     }
     public interface MyClickListener {
         void onItemClick(int position, View v);

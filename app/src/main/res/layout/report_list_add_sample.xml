@@ -23,6 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -35,26 +36,42 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:gravity="center"
-                android:text="News Title"
-                android:textColor="#000000"
+                android:text="ADD NEW ENTRY"
+                android:textColor="#fff"
+                android:background="@color/colorPrimary"
                 android:textStyle="bold"
-                android:textSize="30sp"
+                android:textSize="23sp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
 
         </android.support.v7.widget.CardView>
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/user_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="5dp"
+            app:cardUseCompatPadding="true">
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
-            android:layout_marginTop="5dp"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="match_parent"
+            android:layout_margin="20dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:gravity="center_vertical|center_horizontal">
+
+            <Button
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                android:gravity="center_horizontal"
-                android:text="Add New Sample"
-                />
+                android:text="Add New Sample Entry"
+                android:background="@color/colorSecondary"
+                android:layout_marginTop="15dp"
+                android:textColor="@android:color/white"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:background="@color/black_semi_transparent"
@@ -67,12 +84,29 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_height="wrap_content">
+
+                <TextView
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="Product type"/>
+
+                <Spinner
+                    android:id="@+id/spn_product_type"
+                    android:entries="@array/list_products"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></Spinner>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorSecondary"
                     android:textSize="20sp"
                     android:textStyle="bold"
+                    android:padding="10dp"
                     android:text="Shop Name"/>
                 <Spinner
                     android:id="@+id/spn_shops"
@@ -86,6 +120,7 @@
                     android:textColor="@color/colorSecondary"
                     android:textStyle="bold"
                     android:textSize="20sp"
+                    android:padding="10dp"
                     android:text="Production Date"/>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -104,7 +139,7 @@
                         android:id="@+id/btn_pro_date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginLeft="30dp"
                         android:text="Change"/>
                 </LinearLayout>
                 <TextView
@@ -113,6 +148,7 @@
                     android:textColor="@color/colorSecondary"
                     android:textStyle="bold"
                     android:textSize="20sp"
+                    android:padding="10dp"
                     android:text="Expire Date"/>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -140,6 +176,7 @@
                     android:textColor="@color/colorSecondary"
                     android:textStyle="bold"
                     android:textSize="20sp"
+                    android:padding="10dp"
                     android:text="Count"/>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -158,7 +195,7 @@
                         android:layout_height="wrap_content" />
                 </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
+
         <Button android:id="@+id/btn_add"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -166,5 +203,9 @@
             android:background="@color/colorSecondary"
             android:layout_margin="20dp"
             android:textColor="@android:color/white"/>
+        </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+        </android.support.v4.widget.NestedScrollView>
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

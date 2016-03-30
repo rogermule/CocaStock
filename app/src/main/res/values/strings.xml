@@ -14,4 +14,13 @@
         <item>North Branch</item>
         <item>South Branch</item>
     </string-array>
+
+    <string-array name="list_products">
+        <item>Coca Bottle</item>
+        <item>Coca Plastic</item>
+        <item>Sprite Bottle</item>
+        <item>Sprite Plastic</item>
+        <item>Fanta Bottle</item>
+        <item>Fanta Plastic</item>
+    </string-array>
 </resources>

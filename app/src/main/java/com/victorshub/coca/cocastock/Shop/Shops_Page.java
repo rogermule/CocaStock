@@ -49,10 +49,39 @@ public class Shops_Page extends Fragment {
             }
         });
         ArrayList<Shop> bb = new ArrayList<>();
-        bb.add(new Shop());
-        bb.add(new Shop());
-        bb.add(new Shop());
-        bb.add(new Shop());
+
+        //shop 1
+        Shop a = new Shop();
+        a.setOwner("Shemsu");
+        a.setName("Shemsu Mini Market");
+        a.setLocation("Gurid Shola");
+        a.setLast_sampled_on("2/2/2016");
+        bb.add(a);
+
+        //shop 2
+        Shop b = new Shop();
+        b.setOwner("Abraham");
+        b.setName("Abrahm & friends Shop");
+        b.setLocation("Megenagna");
+        b.setLast_sampled_on("2/2/2016");
+        bb.add(b);
+
+        //shop 2
+        Shop c = new Shop();
+        c.setOwner("Biruk");
+        c.setName("Ethiopia Shop");
+        c.setLocation("Bole");
+        c.setLast_sampled_on("2/2/2016");
+        bb.add(c);
+
+        //shop 2
+        Shop d = new Shop();
+        d.setOwner("Alganesh");
+        d.setName("Michot Lehulachin Shop");
+        d.setLocation("Shiro Meda");
+        d.setLast_sampled_on("2/2/2016");
+        bb.add(d);
+
         mAdapter = new Shops_Adapter(getActivity(),bb);
         myRecyclerView.setAdapter(mAdapter);
 

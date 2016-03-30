@@ -49,19 +49,22 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
+        // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER);
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
+        collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        collapsingToolbarLayout.setTitle("Coca Stock");
+        collapsingToolbarLayout.setExpandedTitleColor(getResources().getColor(android.R.color.transparent));
     }
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new Sample_Page(), "Sample Entries");
-        adapter.addFragment(new Shops_Page(), "Registered SHOPS");
+        adapter.addFragment(new Sample_Page(), "ENTRIES");
+        adapter.addFragment(new Shops_Page(), "SHOPS");
 
         viewPager.setAdapter(adapter);
     }
@@ -106,10 +109,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_report) {
-            Toast.makeText(this,"Report touched",Toast.LENGTH_SHORT).show();
+            viewPager.setCurrentItem(0);
         } else if (id == R.id.nav_shop) {
-            Toast.makeText(this,"Shop touched",Toast.LENGTH_SHORT).show();
-
+            viewPager.setCurrentItem(1);
         } else if (id == R.id.nav_setting) {
             Toast.makeText(this,"Setting touched",Toast.LENGTH_SHORT).show();
 

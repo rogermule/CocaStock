@@ -5,7 +5,7 @@
         <item
             android:id="@+id/nav_report"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Sampled Entries" />
+            android:title="Entries" />
         <item
             android:id="@+id/nav_shop"
             android:icon="@drawable/ic_menu_slideshow"

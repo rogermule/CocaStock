@@ -58,16 +58,77 @@ public class Sample_Page extends Fragment {
         bb.add(new Sample());*/
 
         ArrayList<Report> bb = new ArrayList<Report>();
+        //product 1
         Report a = new Report();
         a.setId("1");
         a.setDate("12/12/2015");
-        a.setProduct_name("Coca");
+        a.setProduct_name("Coca Bottle");
         a.setRemaining_day("60");
         a.setShop_name("Shemsu Product");
         a.setExpiration_date("3/3/2016");
         a.setSample_taken_date("2/2/2016");
-        a.setPicture(R.drawable.coaca_shop+"");
+        a.setPicture(R.drawable.coca_bottle+"");
         bb.add(a);
+
+        Report b = new Report();
+        //product 2
+        b.setId("2");
+        b.setDate("12/12/2015");
+        b.setProduct_name("Coca Plastic");
+        b.setRemaining_day("60");
+        b.setShop_name("Shemsu Product");
+        b.setExpiration_date("3/3/2016");
+        b.setSample_taken_date("2/2/2016");
+        b.setPicture(R.drawable.coca_plastic+"");
+        bb.add(b);
+
+        //product 3
+        Report c = new Report();
+        c.setId("3");
+        c.setDate("12/12/2015");
+        c.setProduct_name("Sprite Bottle");
+        c.setRemaining_day("Remaining days: 10");
+        c.setShop_name("Shemsu Product");
+        c.setExpiration_date("3/3/2016");
+        c.setSample_taken_date("2/2/2016");
+        c.setPicture(R.drawable.sprite_bottle+"");
+        bb.add(c);
+
+        //product 4
+        Report d = new Report();
+        d.setId("4");
+        d.setDate("12/12/2015");
+        d.setProduct_name("Sprite Plastic");
+        d.setRemaining_day("Remaining days: 100");
+        d.setShop_name("Shemsu Product");
+        d.setExpiration_date("3/3/2016");
+        d.setSample_taken_date("2/2/2016");
+        d.setPicture(R.drawable.sprite_plastic+"");
+        bb.add(d);
+
+        //product 5
+        Report e = new Report();
+        e.setId("5");
+        e.setDate("12/12/2015");
+        e.setProduct_name("Fanta Bottle");
+        e.setRemaining_day("Remaining days: 60");
+        e.setShop_name("Shemsu Product");
+        e.setExpiration_date("3/3/2016");
+        e.setSample_taken_date("2/2/2016");
+        e.setPicture(R.drawable.fanta_bottle+"");
+        bb.add(e);
+
+        //product 6
+        Report f = new Report();
+        f.setId("6");
+        f.setDate("12/12/2015");
+        f.setProduct_name("Fanta Plastic");
+        f.setRemaining_day("Remaining days: 40");
+        f.setShop_name("Shemsu Product");
+        f.setExpiration_date("3/3/2016");
+        f.setSample_taken_date("2/2/2016");
+        f.setPicture(R.drawable.fanta_plastic+"");
+        bb.add(f);
 
         mAdapter = new Samples_Adapter(getActivity(),bb);
         myRecyclerView.setAdapter(mAdapter);
